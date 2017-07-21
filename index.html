@@ -1,1 +1,56 @@
-Hello World
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sklearn.neighbors</span> <span style="color: #008800; font-weight: bold">import</span> KNeighborsRegressor
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sklearn.metrics</span> <span style="color: #008800; font-weight: bold">import</span> mean_squared_error
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">numpy</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">np</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">pandas</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">pd</span>
+
+n_features <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>
+
+<span style="color: #888888"># training data</span>
+data_train <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(<span style="background-color: #fff0f0">&quot;data/train.csv&quot;</span>, comment<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;#&quot;</span>, delimiter<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>)
+Xtrain, ytrain <span style="color: #333333">=</span> data_train<span style="color: #333333">.</span>iloc[:,:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], data_train<span style="color: #333333">.</span>iloc[:,<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
+<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Loaded training data: n=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">, d=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> (Xtrain<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">0</span>], Xtrain<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">1</span>]))
+
+<span style="color: #888888"># validation data</span>
+data_validation <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(<span style="background-color: #fff0f0">&quot;data/validation.csv&quot;</span>, comment<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;#&quot;</span>, delimiter<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>)
+Xval, yval <span style="color: #333333">=</span> data_validation<span style="color: #333333">.</span>iloc[:,:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], data_validation<span style="color: #333333">.</span>iloc[:,<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
+<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Loaded validation data: n=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">, d=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> (Xval<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">0</span>], Xval<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">1</span>]))
+
+<span style="color: #888888"># backward selection</span>
+model <span style="color: #333333">=</span> KNeighborsRegressor(n_neighbors<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">10</span>, algorithm<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;kd_tree&quot;</span>)
+
+
+feature_list <span style="color: #333333">=</span> [<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">2</span>, <span style="color: #0000DD; font-weight: bold">3</span>, <span style="color: #0000DD; font-weight: bold">4</span>, <span style="color: #0000DD; font-weight: bold">5</span>, <span style="color: #0000DD; font-weight: bold">6</span>, <span style="color: #0000DD; font-weight: bold">7</span>, <span style="color: #0000DD; font-weight: bold">8</span>, <span style="color: #0000DD; font-weight: bold">9</span>, <span style="color: #0000DD; font-weight: bold">10</span>, <span style="color: #0000DD; font-weight: bold">11</span>, <span style="color: #0000DD; font-weight: bold">12</span>, <span style="color: #0000DD; font-weight: bold">13</span>, <span style="color: #0000DD; font-weight: bold">14</span>]
+
+<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(<span style="color: #007020">list</span>(feature_list))):
+    predictions <span style="color: #333333">=</span> []  <span style="color: #888888"># rest prediction array</span>
+    <span style="color: #888888"># do predictions</span>
+    <span style="color: #008800; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(<span style="color: #007020">list</span>(feature_list))):
+        rdcd_lst <span style="color: #333333">=</span> np<span style="color: #333333">.</span>delete(feature_list, j)
+        model<span style="color: #333333">.</span>fit(Xtrain<span style="color: #333333">.</span>iloc[:, rdcd_lst], ytrain)
+        y_pred <span style="color: #333333">=</span> model<span style="color: #333333">.</span>predict(Xval<span style="color: #333333">.</span>iloc[:, rdcd_lst])
+        y_true <span style="color: #333333">=</span> yval
+        mse <span style="color: #333333">=</span> mean_squared_error(y_true, y_pred)
+        predictions<span style="color: #333333">.</span>append(mse)
+    <span style="color: #888888"># compare preds and remove lowest value</span>
+    preds_sorted <span style="color: #333333">=</span> np<span style="color: #333333">.</span>sort(predictions)   <span style="color: #888888"># sort ascending</span>
+    lowest_val <span style="color: #333333">=</span> preds_sorted[<span style="color: #0000DD; font-weight: bold">0</span>]    <span style="color: #888888"># find minimum value</span>
+    f_to_drop <span style="color: #333333">=</span> predictions<span style="color: #333333">.</span>index(lowest_val)    <span style="color: #888888"># get index of lowest value</span>
+    feature_list <span style="color: #333333">=</span> np<span style="color: #333333">.</span>delete(feature_list, f_to_drop)  <span style="color: #888888"># rem lowest value</span>
+    <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Length of feature_list: </span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> <span style="color: #007020">len</span>(feature_list))
+    <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Average MSE: </span><span style="background-color: #eeeeee">%f</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> np<span style="color: #333333">.</span>array(predictions)<span style="color: #333333">.</span>mean())
+
+    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(feature_list) <span style="color: #333333">==</span> n_features:
+        <span style="color: #008800; font-weight: bold">print</span> feature_list
+        <span style="color: #008800; font-weight: bold">break</span>
+
+<span style="color: #888888"># testing phase</span>
+data_test <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(<span style="background-color: #fff0f0">&quot;data/test.csv&quot;</span>, comment<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;#&quot;</span>, delimiter<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>)
+Xtest, ytest <span style="color: #333333">=</span> data_test<span style="color: #333333">.</span>iloc[:,:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], data_test<span style="color: #333333">.</span>iloc[:,<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
+<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Loaded test data: n=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">, d=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> (Xtest<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">0</span>], Xtest<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">1</span>]))
+model <span style="color: #333333">=</span> KNeighborsRegressor(n_neighbors<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">10</span>, algorithm<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;kd_tree&quot;</span>)
+model<span style="color: #333333">.</span>fit(Xtrain<span style="color: #333333">.</span>iloc[:, feature_list], ytrain)
+y_pred <span style="color: #333333">=</span> model<span style="color: #333333">.</span>predict(Xtest<span style="color: #333333">.</span>iloc[:, rdcd_lst])
+y_true <span style="color: #333333">=</span> ytest
+mse <span style="color: #333333">=</span> mean_squared_error(y_true, y_pred)
+<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;MSE with final feature list: </span><span style="background-color: #eeeeee">%f</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> mse)
+</pre></div>
