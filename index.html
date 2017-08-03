@@ -1,56 +1,366 @@
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sklearn.neighbors</span> <span style="color: #008800; font-weight: bold">import</span> KNeighborsRegressor
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">sklearn.metrics</span> <span style="color: #008800; font-weight: bold">import</span> mean_squared_error
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">numpy</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">np</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">pandas</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">pd</span>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8/>
+    <title>Roskilde Attendee Flow</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <link rel="stylesheet" href="css/d3styling.css"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <link rel="stylesheet" href="css/furtive.min.css">
+    <link href="css/rf-network.css" rel="stylesheet">
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+    <script src='js/heatmap.js'></script>
+    <script src='js/leaflet-heatmap.js'></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/live.js"></script>
+    <script src="js/legend.js"></script>
+</head>
+<body>
 
-n_features <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>
+<!-- Header -->
+<div class="py2">
+    <div class="txt--center">
+        <h1 class="h2">
+            Geo-Spatial Analysis of the Roskilde Festival<br>
+            <small class="small muted">Large-Scale GeoData Analysis of the Roskilde Festival</small>
+        </h1>
 
-<span style="color: #888888"># training data</span>
-data_train <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(<span style="background-color: #fff0f0">&quot;data/train.csv&quot;</span>, comment<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;#&quot;</span>, delimiter<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>)
-Xtrain, ytrain <span style="color: #333333">=</span> data_train<span style="color: #333333">.</span>iloc[:,:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], data_train<span style="color: #333333">.</span>iloc[:,<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
-<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Loaded training data: n=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">, d=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> (Xtrain<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">0</span>], Xtrain<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">1</span>]))
+    </div>
+</div>
 
-<span style="color: #888888"># validation data</span>
-data_validation <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(<span style="background-color: #fff0f0">&quot;data/validation.csv&quot;</span>, comment<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;#&quot;</span>, delimiter<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>)
-Xval, yval <span style="color: #333333">=</span> data_validation<span style="color: #333333">.</span>iloc[:,:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], data_validation<span style="color: #333333">.</span>iloc[:,<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
-<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Loaded validation data: n=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">, d=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> (Xval<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">0</span>], Xval<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">1</span>]))
+<!-- Architecture -->
+<div class="bg--off-white py2">
+    <section class="measure p2" id="why-furtive">
+        <h2>The Architecture</h2>
+        <p class="h4">
+            IBM and CBS. Blablabla.
+        </p>
+        <p class="h4">
+            Blablabbla <a href="http://caniuse.com/#search=flexbox">see here.</a>,
+        </p>
+    </section>
+</div>
 
-<span style="color: #888888"># backward selection</span>
-model <span style="color: #333333">=</span> KNeighborsRegressor(n_neighbors<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">10</span>, algorithm<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;kd_tree&quot;</span>)
+<!-- Time-Series Heatmap -->
+<div class="bg--off-white py2">
+    <section class="measure p2" id="xxx">
+        <h2>Time-Series Heatmap</h2>
+        <div id='map'></div>
+        <p class="h4">
+            GeoDate longitude latitude, using <em>heatmap.js</em>, <em>d3</em> and <em>Leaflet.js</em><br>
+            <a href="http://caniuse.com/#search=flexbox">see the code here.</a>
+        </p>
+    </section>
+</div>
+
+<!-- Using LSH to Find Group of Friends-->
+<div class="bg--off-white py2">
+    <section class="measure p2" id="xxxx">
+        <h2>Using LSH to Find Group of Friends</h2>
+        <p class="h4">
+        <ul>
+            <li>Data from 50.000 users</li>
+            <li>With each user having a around 7000 time-stamped locations</li>
+            <li>Bruteforce runtime of xyz, or around 1.5 weeks on a MacBook Air 2017</li>
+            <li>...use LSH!</li>
+        </ul>
+        <p class="h4">
+            -- insert fancy network graph here --<br>
+            <a href="http://caniuse.com/#search=flexbox">see the full code here.</a>
+            </p>
+        </p>
+    </section>
+</div>
 
 
-feature_list <span style="color: #333333">=</span> [<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">1</span>, <span style="color: #0000DD; font-weight: bold">2</span>, <span style="color: #0000DD; font-weight: bold">3</span>, <span style="color: #0000DD; font-weight: bold">4</span>, <span style="color: #0000DD; font-weight: bold">5</span>, <span style="color: #0000DD; font-weight: bold">6</span>, <span style="color: #0000DD; font-weight: bold">7</span>, <span style="color: #0000DD; font-weight: bold">8</span>, <span style="color: #0000DD; font-weight: bold">9</span>, <span style="color: #0000DD; font-weight: bold">10</span>, <span style="color: #0000DD; font-weight: bold">11</span>, <span style="color: #0000DD; font-weight: bold">12</span>, <span style="color: #0000DD; font-weight: bold">13</span>, <span style="color: #0000DD; font-weight: bold">14</span>]
 
-<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(<span style="color: #007020">list</span>(feature_list))):
-    predictions <span style="color: #333333">=</span> []  <span style="color: #888888"># rest prediction array</span>
-    <span style="color: #888888"># do predictions</span>
-    <span style="color: #008800; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #007020">len</span>(<span style="color: #007020">list</span>(feature_list))):
-        rdcd_lst <span style="color: #333333">=</span> np<span style="color: #333333">.</span>delete(feature_list, j)
-        model<span style="color: #333333">.</span>fit(Xtrain<span style="color: #333333">.</span>iloc[:, rdcd_lst], ytrain)
-        y_pred <span style="color: #333333">=</span> model<span style="color: #333333">.</span>predict(Xval<span style="color: #333333">.</span>iloc[:, rdcd_lst])
-        y_true <span style="color: #333333">=</span> yval
-        mse <span style="color: #333333">=</span> mean_squared_error(y_true, y_pred)
-        predictions<span style="color: #333333">.</span>append(mse)
-    <span style="color: #888888"># compare preds and remove lowest value</span>
-    preds_sorted <span style="color: #333333">=</span> np<span style="color: #333333">.</span>sort(predictions)   <span style="color: #888888"># sort ascending</span>
-    lowest_val <span style="color: #333333">=</span> preds_sorted[<span style="color: #0000DD; font-weight: bold">0</span>]    <span style="color: #888888"># find minimum value</span>
-    f_to_drop <span style="color: #333333">=</span> predictions<span style="color: #333333">.</span>index(lowest_val)    <span style="color: #888888"># get index of lowest value</span>
-    feature_list <span style="color: #333333">=</span> np<span style="color: #333333">.</span>delete(feature_list, f_to_drop)  <span style="color: #888888"># rem lowest value</span>
-    <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Length of feature_list: </span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> <span style="color: #007020">len</span>(feature_list))
-    <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Average MSE: </span><span style="background-color: #eeeeee">%f</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> np<span style="color: #333333">.</span>array(predictions)<span style="color: #333333">.</span>mean())
+<!--
+<div id='chartBox'></div>
+-->
+<!--
+<div id='titleBox'>Roskilde Attendee Flow</div>
+-->
 
-    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #007020">len</span>(feature_list) <span style="color: #333333">==</span> n_features:
-        <span style="color: #008800; font-weight: bold">print</span> feature_list
-        <span style="color: #008800; font-weight: bold">break</span>
+<script>
+    //heatmap.js config
+    var cfg = {
+        // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+        // if scaleRadius is false it will be the constant radius used in pixels
+        "radius": .00075,
+        "maxOpacity": 0.8,
+        // scales the radius based on map zoom
+        "scaleRadius": true,
+        // if set to false the heatmap uses the global maximum for colorization
+        // if activated: uses the data maximum within the current map boundaries
+        //   (there will always be a red spot with useLocalExtremas true)
+        "useLocalExtrema": false,
+        // which field name in your data represents the latitude - default "lat"
+        //latField: 'latitude',
+        // which field name in your data represents the longitude - default "lng"
+        //lngField: 'longitude',
+        // which field name in your data represents the data value - default "value"
+        valueField: 'value'
+    };
 
-<span style="color: #888888"># testing phase</span>
-data_test <span style="color: #333333">=</span> pd<span style="color: #333333">.</span>read_csv(<span style="background-color: #fff0f0">&quot;data/test.csv&quot;</span>, comment<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;#&quot;</span>, delimiter<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;,&quot;</span>)
-Xtest, ytest <span style="color: #333333">=</span> data_test<span style="color: #333333">.</span>iloc[:,:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>], data_test<span style="color: #333333">.</span>iloc[:,<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]
-<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Loaded test data: n=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">, d=</span><span style="background-color: #eeeeee">%i</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> (Xtest<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">0</span>], Xtest<span style="color: #333333">.</span>shape[<span style="color: #0000DD; font-weight: bold">1</span>]))
-model <span style="color: #333333">=</span> KNeighborsRegressor(n_neighbors<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">10</span>, algorithm<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;kd_tree&quot;</span>)
-model<span style="color: #333333">.</span>fit(Xtrain<span style="color: #333333">.</span>iloc[:, feature_list], ytrain)
-y_pred <span style="color: #333333">=</span> model<span style="color: #333333">.</span>predict(Xtest<span style="color: #333333">.</span>iloc[:, rdcd_lst])
-y_true <span style="color: #333333">=</span> ytest
-mse <span style="color: #333333">=</span> mean_squared_error(y_true, y_pred)
-<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;MSE with final feature list: </span><span style="background-color: #eeeeee">%f</span><span style="background-color: #fff0f0">&quot;</span> <span style="color: #333333">%</span> mse)
-</pre></div>
+    // setup leaflet map and add layers
+    var heatmapLayer = new HeatmapOverlay(cfg);
+
+    var baseLayer = L.tileLayer(
+            'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>",
+                maxZoom: 18,
+                accessToken: 'pk.eyJ1Ijoia2xsYTE1YWMiLCJhIjoiY2o1czlxbjI2MTJ5ZzJxbjI2dWVvNnozYSJ9.yd5KecfkZAyEZu7SBbPGgw',
+                id: 'mapbox.streets'
+            }
+    );
+
+
+    var map = new L.Map('map', {
+        zoomControl: false,
+        center: new L.LatLng(55.617146876, 12.089504778),
+        zoom: 14,
+        layers: [baseLayer, heatmapLayer]
+    });
+
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    map.scrollWheelZoom.disable();
+    map.boxZoom.disable();
+    map.keyboard.disable();
+
+    // get and work JSON
+    var sodaUrl = 'data/data.json';
+    $.getJSON(sodaUrl, function (rawData) {
+
+        // clean up data
+        var goodData = [];
+        for (var i = 0; i < rawData.length; i++) {
+            rawData[i].value = 0;         // set value to 0, to add level of "freshness" dynamically later on
+            rawData[i].fresh = true;      // append "fresh" to indicate a new point
+
+            if (rawData[i].latitude && rawData[i].longitude) {
+                rawData[i].lat = parseFloat(rawData[i].latitude);
+                rawData[i].lng = parseFloat(rawData[i].longitude);
+            }
+
+            rawData[i].date = new Date(rawData[i].date);  // create date obj from date string
+
+            if (rawData[i].latitude && rawData[i].longitude) {
+                goodData.push(rawData[i])
+            }
+            ;
+        }
+        ;
+
+        //console.log(goodData);
+        var nextDate = new Date(goodData[0].date);
+
+        console.log("first nextDate: " + nextDate);
+
+        // initialize variables for the D3 chart
+        var countArray = [],
+                svg,
+                day,
+                x,
+                y,
+                margin,
+                height,
+                width,
+                intervalCounter = 10,
+                index = 0,
+                lastDate,
+                data = {
+                    max: 15,
+                    min: 0,
+                    data: []
+                };
+
+        initializeChart();
+        //initTitleBox();
+
+
+        // iterate
+        var updatespeed = 50;    // how often to update the canvas in ms
+        var itercount = 10;     // how often to iterate per day
+        setInterval(function () {
+
+            // iterates 10 times for each day
+            if (intervalCounter == itercount) {
+                intervalCounter = 0;
+                getAnotherDataBatch(2);     // argument = how many hours to accumulate
+            } else {
+                intervalCounter++;
+            }
+
+
+            // create new array for live points, push it to the map
+            var newData = [];
+            for (var j = 0; j < data.data.length; j++) {
+                var point = data.data[j];
+
+                if (point.value >= itercount) {
+                    point.fresh = false;
+                }
+
+                // fade in fresh points, fade out unfresh points
+                if (point.fresh) {
+                    point.value = point.value + .2;
+                } else {
+                    point.value = point.value - .1;
+                }
+
+                if (point.value > 0) {
+                    newData.push(data.data[j]);
+                }
+            }
+
+            data.data = newData;
+
+            heatmapLayer.setData(data);
+
+
+            // update the chart
+            day = svg.selectAll(".day")
+                    .data(countArray)
+                    .enter()
+                    .append("g")
+                    .attr("class", "day")
+                    .attr("transform", function (d) {
+                        //var yesterday = new Date(d.date);
+                        //yesterday = yesterday.setDate(yesterday.getDate() - 1)
+                        return "translate(" + x(d.date) + ",0)";
+                    })
+                    .append("rect")
+                    .attr("width", 28)
+                    .attr("y", function (d) {
+
+                        return height - y(d.count);
+                    })
+                    .attr("height", function (d) {
+                        return y(d.count);
+                    })
+                    .attr("class", function (d) {
+                        return (d.date);
+                    })
+
+        }, updatespeed);
+
+
+        // helper function to add X hours to the current date
+        Date.prototype.addHours = function (h) {
+            this.setTime(this.getTime() + (h * 60 * 60 * 1000));
+            return this;
+        }
+
+        function getAnotherDataBatch(hours) {
+
+            console.log("nextDate old:" + nextDate);
+            nextDate = new Date(nextDate).addHours(hours);      // how many hours to accumulate
+            console.log("nextDate new:" + nextDate);
+
+            var todayCounter = 0;
+
+            // iterate over goodData, push today's events to data.data
+            for (; ; index++) {
+
+                var thisDate = goodData[index].date;                // take current date
+                console.log(thisDate + nextDate);
+                if (thisDate < nextDate) {       // if the curr date < next date, push it
+                    data.data.push(goodData[index]);
+                    todayCounter++;
+                    lastDate = thisDate;
+                } else {
+
+                    // Still need to increment lastDate if there is no data
+                    if (todayCounter == 0) {
+                        console.log(lastDate);
+                        lastDate = lastDate.getTime() - 1;
+                    }
+
+                    var todayCount = {
+                        date: lastDate,
+                        count: todayCounter
+                    };
+
+                    countArray.push(todayCount);
+                    console.log(todayCount.count);
+                    break;
+
+                }
+            }
+        }
+
+        // Todo: implement
+        function initTitleBox() {
+            var virtualSelection = d3.select("#titleBox").selectAll("p").data(countArray);
+            // make DOM elements existent with enter()
+            var myText = virtualSelection.enter().append("p");
+            // change text of DOM element
+            myText.text(function (d) { return (d.date) });
+        }
+
+        //sets margins and axes for the D3 chart.  Borrowed from Chris Metcalf's example on dev.socrata.com
+        function initializeChart() {
+
+            // Set our margins
+            margin = {
+                top: 20,
+                right: 20,
+                bottom: 30,
+                left: 60
+            },
+                    width = 800 - margin.left - margin.right,
+                    height = 100 - margin.top - margin.bottom;
+
+            // Our X scale
+            x = d3.time.scale()
+                    .domain([new Date(goodData.date), d3.time.hour.offset(new Date(goodData[goodData.length - 1].date), 1)])
+                    .rangeRound([0, width - margin.left - margin.right])
+            //.ticks(d3.time.day, 1);
+
+            // Our Y scale
+            y = d3.scale.linear()
+                    .domain([0, 10000])
+                    .rangeRound([height, 0]);
+
+            // Our color bands
+            var color = d3.scale.ordinal()
+                    .range(["#308fef", "#5fa9f3", "#1176db"]);
+
+            // Use our X scale to set a bottom axis
+            var xAxis = d3.svg.axis()
+                    .scale(x)
+                    .orient("bottom");
+
+            // Same for our left axis
+            var yAxis = d3.svg.axis()
+                    .scale(y)
+                    .orient("left")
+                    .tickValues([0, 5000, 10000]);
+
+            // Add our chart to the #chart div
+            svg = d3.select("#chartBox").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+            svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(xAxis);
+
+            svg.append("g")
+                    .attr("class", "y axis")
+                    .call(yAxis);
+        };
+    });
+
+</script>
+</body>
+</html>

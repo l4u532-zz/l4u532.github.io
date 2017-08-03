@@ -1,0 +1,532 @@
+{
+    "nodes": [
+        {
+            "id": "User 17820",
+            "group": 17820
+        },
+        {
+            "id": "User 306",
+            "group": 306
+        },
+        {
+            "id": "User 415",
+            "group": 415
+        },
+        {
+            "id": "User 33113",
+            "group": 33113
+        },
+        {
+            "id": "User 11578",
+            "group": 11578
+        },
+        {
+            "id": "User 15837",
+            "group": 15837
+        },
+        {
+            "id": "User 19187",
+            "group": 19187
+        },
+        {
+            "id": "User 4567",
+            "group": 4567
+        },
+        {
+            "id": "User 27",
+            "group": 27
+        },
+        {
+            "id": "User 22774",
+            "group": 22774
+        },
+        {
+            "id": "User 4566",
+            "group": 4566
+        },
+        {
+            "id": "User 19088",
+            "group": 19088
+        },
+        {
+            "id": "User 17404",
+            "group": 17404
+        },
+        {
+            "id": "User 28115",
+            "group": 28115
+        },
+        {
+            "id": "User 383",
+            "group": 383
+        },
+        {
+            "id": "User 15962",
+            "group": 15962
+        },
+        {
+            "id": "User 11434",
+            "group": 11434
+        },
+        {
+            "id": "User 33392",
+            "group": 33392
+        },
+        {
+            "id": "User 17188",
+            "group": 17188
+        },
+        {
+            "id": "User 975",
+            "group": 975
+        },
+        {
+            "id": "User 37795",
+            "group": 37795
+        },
+        {
+            "id": "User 353",
+            "group": 353
+        },
+        {
+            "id": "User 33836",
+            "group": 33836
+        },
+        {
+            "id": "User 3511",
+            "group": 3511
+        },
+        {
+            "id": "User 165",
+            "group": 165
+        },
+        {
+            "id": "User 32036",
+            "group": 32036
+        },
+        {
+            "id": "User 21519",
+            "group": 21519
+        },
+        {
+            "id": "User 102",
+            "group": 102
+        },
+        {
+            "id": "User 237",
+            "group": 237
+        },
+        {
+            "id": "User 29661",
+            "group": 29661
+        },
+        {
+            "id": "User 355",
+            "group": 355
+        },
+        {
+            "id": "User 253",
+            "group": 253
+        },
+        {
+            "id": "User 31005",
+            "group": 31005
+        },
+        {
+            "id": "User 4198",
+            "group": 4198
+        },
+        {
+            "id": "User 11037",
+            "group": 11037
+        },
+        {
+            "id": "User 376",
+            "group": 376
+        },
+        {
+            "id": "User 8806",
+            "group": 8806
+        },
+        {
+            "id": "User 27490",
+            "group": 27490
+        },
+        {
+            "id": "User 27073",
+            "group": 27073
+        },
+        {
+            "id": "User 147",
+            "group": 147
+        },
+        {
+            "id": "User 12758",
+            "group": 12758
+        },
+        {
+            "id": "User 2116",
+            "group": 2116
+        },
+        {
+            "id": "User 292",
+            "group": 292
+        },
+        {
+            "id": "User 313",
+            "group": 313
+        },
+        {
+            "id": "User 258",
+            "group": 258
+        },
+        {
+            "id": "User 14141",
+            "group": 14141
+        },
+        {
+            "id": "User 28593",
+            "group": 28593
+        },
+        {
+            "id": "User 254",
+            "group": 254
+        },
+        {
+            "id": "User 12149",
+            "group": 12149
+        },
+        {
+            "id": "User 24248",
+            "group": 24248
+        },
+        {
+            "id": "User 3929",
+            "group": 3929
+        },
+        {
+            "id": "User 9931",
+            "group": 9931
+        },
+        {
+            "id": "User 389",
+            "group": 389
+        },
+        {
+            "id": "User 17360",
+            "group": 17360
+        },
+        {
+            "id": "User 35",
+            "group": 35
+        },
+        {
+            "id": "User 27023",
+            "group": 27023
+        },
+        {
+            "id": "User 13227",
+            "group": 13227
+        },
+        {
+            "id": "User 1874",
+            "group": 1874
+        },
+        {
+            "id": "User 35403",
+            "group": 35403
+        },
+        {
+            "id": "User 13534",
+            "group": 13534
+        },
+        {
+            "id": "User 110",
+            "group": 110
+        },
+        {
+            "id": "User 244",
+            "group": 244
+        },
+        {
+            "id": "User 246",
+            "group": 246
+        },
+        {
+            "id": "User 15614",
+            "group": 15614
+        },
+        {
+            "id": "User 994",
+            "group": 994
+        },
+        {
+            "id": "User 12923",
+            "group": 12923
+        },
+        {
+            "id": "User 16835",
+            "group": 16835
+        },
+        {
+            "id": "User 13948",
+            "group": 13948
+        },
+        {
+            "id": "User 11442",
+            "group": 11442
+        }
+    ],
+    "links": [
+        {
+            "source": "User 27",
+            "target": "User 2116",
+            "value": 51
+        },
+        {
+            "source": "User 27",
+            "target": "User 3511",
+            "value": 53
+        },
+        {
+            "source": "User 27",
+            "target": "User 8806",
+            "value": 59
+        },
+        {
+            "source": "User 27",
+            "target": "User 11037",
+            "value": 51
+        },
+        {
+            "source": "User 27",
+            "target": "User 31005",
+            "value": 51
+        },
+        {
+            "source": "User 35",
+            "target": "User 1874",
+            "value": 54
+        },
+        {
+            "source": "User 35",
+            "target": "User 2116",
+            "value": 52
+        },
+        {
+            "source": "User 35",
+            "target": "User 4566",
+            "value": 51
+        },
+        {
+            "source": "User 35",
+            "target": "User 11434",
+            "value": 55
+        },
+        {
+            "source": "User 35",
+            "target": "User 13534",
+            "value": 51
+        },
+        {
+            "source": "User 35",
+            "target": "User 15614",
+            "value": 53
+        },
+        {
+            "source": "User 35",
+            "target": "User 32036",
+            "value": 52
+        },
+        {
+            "source": "User 102",
+            "target": "User 4198",
+            "value": 55
+        },
+        {
+            "source": "User 102",
+            "target": "User 21519",
+            "value": 51
+        },
+        {
+            "source": "User 102",
+            "target": "User 35403",
+            "value": 51
+        },
+        {
+            "source": "User 110",
+            "target": "User 3929",
+            "value": 62
+        },
+        {
+            "source": "User 147",
+            "target": "User 17820",
+            "value": 56
+        },
+        {
+            "source": "User 147",
+            "target": "User 27490",
+            "value": 51
+        },
+        {
+            "source": "User 147",
+            "target": "User 33392",
+            "value": 61
+        },
+        {
+            "source": "User 165",
+            "target": "User 9931",
+            "value": 60
+        },
+        {
+            "source": "User 237",
+            "target": "User 13227",
+            "value": 50
+        },
+        {
+            "source": "User 244",
+            "target": "User 975",
+            "value": 58
+        },
+        {
+            "source": "User 244",
+            "target": "User 37795",
+            "value": 65
+        },
+        {
+            "source": "User 246",
+            "target": "User 994",
+            "value": 100
+        },
+        {
+            "source": "User 246",
+            "target": "User 12758",
+            "value": 100
+        },
+        {
+            "source": "User 246",
+            "target": "User 19187",
+            "value": 100
+        },
+        {
+            "source": "User 246",
+            "target": "User 28115",
+            "value": 100
+        },
+        {
+            "source": "User 253",
+            "target": "User 4566",
+            "value": 51
+        },
+        {
+            "source": "User 254",
+            "target": "User 15962",
+            "value": 53
+        },
+        {
+            "source": "User 258",
+            "target": "User 11442",
+            "value": 100
+        },
+        {
+            "source": "User 292",
+            "target": "User 4567",
+            "value": 53
+        },
+        {
+            "source": "User 292",
+            "target": "User 12923",
+            "value": 53
+        },
+        {
+            "source": "User 292",
+            "target": "User 13948",
+            "value": 53
+        },
+        {
+            "source": "User 292",
+            "target": "User 16835",
+            "value": 60
+        },
+        {
+            "source": "User 292",
+            "target": "User 17360",
+            "value": 57
+        },
+        {
+            "source": "User 306",
+            "target": "User 24248",
+            "value": 52
+        },
+        {
+            "source": "User 313",
+            "target": "User 15837",
+            "value": 56
+        },
+        {
+            "source": "User 313",
+            "target": "User 19088",
+            "value": 53
+        },
+        {
+            "source": "User 313",
+            "target": "User 22774",
+            "value": 60
+        },
+        {
+            "source": "User 313",
+            "target": "User 29661",
+            "value": 52
+        },
+        {
+            "source": "User 353",
+            "target": "User 14141",
+            "value": 58
+        },
+        {
+            "source": "User 355",
+            "target": "User 28593",
+            "value": 52
+        },
+        {
+            "source": "User 376",
+            "target": "User 11578",
+            "value": 52
+        },
+        {
+            "source": "User 376",
+            "target": "User 12149",
+            "value": 54
+        },
+        {
+            "source": "User 376",
+            "target": "User 17404",
+            "value": 60
+        },
+        {
+            "source": "User 376",
+            "target": "User 33836",
+            "value": 54
+        },
+        {
+            "source": "User 383",
+            "target": "User 27023",
+            "value": 52
+        },
+        {
+            "source": "User 389",
+            "target": "User 17188",
+            "value": 54
+        },
+        {
+            "source": "User 389",
+            "target": "User 33113",
+            "value": 54
+        },
+        {
+            "source": "User 415",
+            "target": "User 27073",
+            "value": 53
+        }
+    ]
+}

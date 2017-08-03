@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+</head>
+<body>
+
+<div id='titleBox'>hey</div>
+
+<script>
+
+    // d3 standard procedure
+    // create data as an ARRAY
+    var lastDate = ["2017-10-12"];
+    var nextDate = ["LOL"];
+    // bind data to (yet non-existent) DOM elements
+    var virtualSelection = d3.select("#titleBox").select("p").data(lastDate);
+    // make DOM elements existent with enter()
+    var newParas = virtualSelection.enter().append("p");
+    // change text of DOM element
+    newParas.text(lastDate);
+
+</script>
+
+</body>
+</html>
