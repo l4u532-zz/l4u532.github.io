@@ -4,15 +4,17 @@
     <meta charset=utf-8/>
     <title>Roskilde Attendee Flow</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
-    <link rel="stylesheet" href="css/d3styling.css"/>
+    <link rel="stylesheet" href="css/heatmapstyle.css"/>
     <link rel="stylesheet" href="css/leaflet.css"/>
     <link rel="stylesheet" href="css/furtive.min.css">
     <link rel="stylesheet" href="css/rf-network.css">
+    <link rel="stylesheet" href="css/website-custom.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
     <script src="js/leaflet.js"></script>
     <script src='js/heatmap.js'></script>
     <script src='js/leaflet-heatmap.js'></script>
+    <script src='js/video-to-fullscreen.js'></script>
     <!--<script src="js/jquery.js"></script>-->
     <!--<script src="js/lodash.js"></script>-->
     <!--<script src="js/graph.js"></script>-->
@@ -23,14 +25,30 @@
 
 <!-- Header -->
 <div class="py2">
-    <div class="txt--center">
-        <h1 class="h2">
-            Geo-Spatial Analysis of the Roskilde Festival<br>
-            <small class="small muted">Large-Scale GeoData Analysis of the Roskilde Festival</small>
-        </h1>
+    <video class="video-background" style="height: 200px;" no-controls autoplay src="media/rf16after_crop.mp4" poster="media/rf17trailer.png"></video>
+    <div class="txt--center" style="color: white; font-family: rfbold;"><h2><b>A Geo-Spatial Analysis of Europe's 2nd Largest Music Festival</b></h2></div>
 
-    </div>
 </div>
+
+
+
+<!-- What is Roskilde? -->
+<div class="bg--off-white py2">
+    <section class="measure p2" id="what-is">
+        <h2>Introduction</h2>
+        <p class="h4">
+            Roskilde Festival is Europe's second largest music festival with <em>180,000 attendees</em>. In collaboration with <em>IBM</em> and <em>Copenhagen Business School</em>, these three good-looking guys got to analyse the (anonymised) GPS data of the festival users, recorded by the offical Roskilde App.
+        </p>
+        <div class="txt--center">
+            <div style="float: left; width: 200px; margin: 10px"><img src="media/bio_michele.jpg" height="200" width="200"></div>
+            <div style="float: left; width: 200px; margin: 10px"><img src="media/bio_paul.jpg" height="200" width="200"></div>
+            <div style="float: left; width: 200px; margin: 10px"><img src="media/bio_klaus.jpg" height="200" width="200"></div>
+            <br style="clear: left;" />
+        </div>
+        <a href="#!" class="w100--s my1 btn--red" title="Furtive button example">Learn more</a>
+    </section>
+</div>
+
 
 <!-- Architecture -->
 <div class="bg--off-white py2">
