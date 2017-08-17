@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+<head>
+<link href="css/rf-network.css" rel="stylesheet">
+<link href="../css/materialize.css" rel="stylesheet">
+
+<meta charset="utf-8">
+</head>
+
+<body>
+<div class="container">
+<div class="row">
+    <div class="col s12 m9 l10">
+        <div id="collections" class="section scrollspy">
+            <div class="row">
+                <div class="col s12">
+                    <h2 class="header">Utilising LSH to Compute-Efficiently Find People with Similar Movement Patterns Among 40000^20 Combinations</h2>
+                    <p class="caption">The goal: We have data from 40k users and now want to find all those, that are SIMILAR to each other</p>
+                    <div class="section">
+                        <h5>Starting position</h5>
+                        <p>
+                            * GPS accuracy averages x meters, meaning we should take this inaccuracy into account when comparing people&rsquo;s movement patterns<br />
+                            * This is why we have split the festival area into Rectangles<br />
+                            * (d3 of user hitting rectangle areas with polygon hit)<br />
+                            * Each time a user enters a specific rectangle, a rectangle hit is registered<br />
+                            * Every hour, the id of the touched rectangle is recorded, leading to a vector that looks like this:<br />
+                            * [63202115, 63202116, 63202117, 63202118, &#8230;]<br />
+                            * or, graphically, like this: (grid with touched grids)<br />
+                            * GPS update frequency is set to 15 minutes, but hardly any user does send an update that often (b/c of network overload, dead batteries, app killing, &#8230;)<br />
+                        </p>
+
+                    </div>
+
+                    <p>
+                        Runtime<br />
+                        * Considering only hourly slices, this produces data of<br />
+                        * for one participant: 24 hours*1 slice*7 days = 168 points, or<br />
+                        * for all participants: 40k users * 168 points = 6,720,000 points<br />
+                        * Comparing the movement pattern of two users can look like this:<br />
+                        * X [63202115, 63202116, 63202117, 63202117]<br />
+                        * vs<br />
+                        * Y [63202115, 63202116, 63202117, 63202118]<br />
+                        * =<br />
+                        * J(X,Y) = |X&#8745;Y| / |X&#8746;Y| &mdash;> 3/4 = 0.75<br />
+                        * Comparing movement patterns like this (one-by-one) would have a runtime of O(N^2), or 1,600,000,000 FLOP/s, taking XYZ days on server with XYZ GFLOP/s.
+                    </p>
+
+                    <p>The Solution<br />
+                        LSH. What is LSH?<br />
+                        http://infolab.stanford.edu/~ullman/mmds/ch3a.pdf</p>
+
+                    <p>1. Generate hash values<br />
+                        2. Compress to signature matrix<br />
+                        3. Compare signatures<br />
+                        4. Bruteforce-compare candidate pairs</p>
+
+                    <p>Implementation<br />
+                        * Using LSHash https://github.com/kayzhu/LSHash<br />
+                        * Bruteforce comparison with multi-threading main_bruteforce.py<br />
+                        * LSH implementation main_lsh.py</p>
+
+                    <p>The result<br />
+                        * Runtime reduction from O(N^2) to O(N)<br />
+                        * D3 Graph</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+<div><svg width="700" height="600"></svg></div>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/graph.js"></script>
+
+<!-- <script src="js/legend.js"></script> -->
+</body>
+</html>
