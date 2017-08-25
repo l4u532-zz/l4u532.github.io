@@ -4727,6 +4727,7 @@ small {
 .card .card-title {
     font-size: 24px;
     font-weight: 300;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
 .card .card-title.activator {
@@ -4743,6 +4744,7 @@ small {
 }
 
 .card.small .card-image + .card-content, .card.medium .card-image + .card-content, .card.large .card-image + .card-content {
+
     max-height: 40%;
 }
 
@@ -4852,6 +4854,7 @@ small {
     left: 0;
     max-width: 100%;
     padding: 24px;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
 .card .card-content {

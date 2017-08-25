@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+<head>
+    <!-- general css -->
+    <link href="../css/materialize.css" rel="stylesheet">
+
+
+
+    <meta charset="utf-8">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m9 l10">
+            <div id="collections" class="section scrollspy">
+                <div class="row">
+                    <div class="col s12">
+                        <h2 class="header">Utilising LSH to Compute-Efficiently Find People with Similar Movement Patterns Among 40000^20 Combinations</h2>
+                        <p class="caption">The goal: We have data from 40k users and now want to find all those, that are SIMILAR to each other</p>
+                        <div class="section">
+                            <h5>Starting position</h5>
+                            <p>
+                                * GPS accuracy averages x meters, meaning we should take this inaccuracy into account when comparing people&rsquo;s movement patterns<br />
+                                * This is why we have split the festival area into Rectangles<br />
+                                * (d3 of user hitting rectangle areas with polygon hit)<br />
+                                * Each time a user enters a specific rectangle, a rectangle hit is registered<br />
+                                * Every hour, the id of the touched rectangle is recorded, leading to a vector that looks like this:<br />
+                                * [63202115, 63202116, 63202117, 63202118, &#8230;]<br />
+                                * or, graphically, like this: (grid with touched grids)<br />
+                                * GPS update frequency is set to 15 minutes, but hardly any user does send an update that often (b/c of network overload, dead batteries, app killing, &#8230;)<br />
+                            </p>
+
+                            <h5>Visualising a Grid Hit</h5>
+                            <div id="demo"></div>
+                            <div id="map"></div>
+                            <script src="polyline/polyline.js" type="text/javascript"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
