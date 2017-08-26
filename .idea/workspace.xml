@@ -2,52 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b75f2c11-e9d8-45e8-8c91-665202602cbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/network/networkprev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/heatmapprev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/networkprev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/heatmap/heatmap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/heatmap/js/ts-heatmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/network/js/legend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/network/ntwrk.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/polyline/polyline.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/polyline/polyline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/polyline/polyline.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lsh/css/rf-network.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lsh/js/graph.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lsh/js/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/polyline/polyline-test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/polyline/polyline.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/heatmapstyle.css" afterPath="$PROJECT_DIR$/heatmap/css/heatmapstyle.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/leaflet.css" afterPath="$PROJECT_DIR$/heatmap/css/leaflet.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/css/rf-network.css" afterPath="$PROJECT_DIR$/lsh/network/css/rf-network.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/charlize.json" afterPath="$PROJECT_DIR$/heatmap/data/charlize.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/convert_csv_to_HeatmapJSON.py" afterPath="$PROJECT_DIR$/heatmap/data/convert_csv_to_HeatmapJSON.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/create_json_groupbyactivities.py" afterPath="$PROJECT_DIR$/heatmap/data/create_json_groupbyactivities.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/data.json" afterPath="$PROJECT_DIR$/heatmap/data/data.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/rf15.json" afterPath="$PROJECT_DIR$/heatmap/data/rf15.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/rf15_groupbyactivities.csv" afterPath="$PROJECT_DIR$/heatmap/data/rf15_groupbyactivities.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/rf15_groupbyactivities.json" afterPath="$PROJECT_DIR$/heatmap/data/rf15_groupbyactivities.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/rf15_health_new.csv" afterPath="$PROJECT_DIR$/heatmap/data/rf15_health_new.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/rf16.json" afterPath="$PROJECT_DIR$/heatmap/data/rf16.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/data/small16.csv" afterPath="$PROJECT_DIR$/heatmap/data/small16.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/graph.js" afterPath="$PROJECT_DIR$/lsh/network/js/graph.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/heatmap.js" afterPath="$PROJECT_DIR$/heatmap/js/heatmap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/jquery.js" afterPath="$PROJECT_DIR$/heatmap/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/leaflet-heatmap.js" afterPath="$PROJECT_DIR$/heatmap/js/leaflet-heatmap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/leaflet.js" afterPath="$PROJECT_DIR$/heatmap/js/leaflet.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lsh/data/create_json_groupbyactivities.py" afterPath="$PROJECT_DIR$/lsh/network/data/create_json_groupbyactivities.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lsh/data/rf15.json" afterPath="$PROJECT_DIR$/lsh/network/data/rf15.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lsh/data/rf15_groupbyactivities.csv" afterPath="$PROJECT_DIR$/lsh/network/data/rf15_groupbyactivities.csv" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lsh/data/rf15_groupbyactivities.json" afterPath="$PROJECT_DIR$/lsh/network/data/rf15_groupbyactivities.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lsh/data/rf16.json" afterPath="$PROJECT_DIR$/lsh/network/data/rf16.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/polyline/points.geojson" afterPath="$PROJECT_DIR$/lsh/polyline/points.geojson" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/l4u532.github.io.iml" afterPath="$PROJECT_DIR$/.idea/l4u532.github.io.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/polyline/d3.v3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lsh/polyline/leaflet.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/materialize.css" afterPath="$PROJECT_DIR$/css/materialize.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lsh/lsh.html" afterPath="$PROJECT_DIR$/lsh/lsh.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lsh/polyline/polyline.html" afterPath="$PROJECT_DIR$/lsh/polyline/polyline.html" />
     </list>
     <ignored path="l4u532.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,11 +46,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lsh.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lsh.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lsh/lsh.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="polyline.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lsh/polyline/polyline.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d3.v3.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lsh/polyline/d3.v3.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,16 +81,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leaflet.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/heatmap/css/leaflet.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,18 +128,6 @@
               <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding>
                 <marker date="1502805720000" expanded="true" signature="389:509" ph="/*...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="heatmap.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/heatmap/js/heatmap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1638">
-              <caret line="492" column="12" selection-start-line="492" selection-start-column="12" selection-end-line="492" selection-end-column="12" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -232,6 +188,7 @@
         <option value="$PROJECT_DIR$/css/materialize.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/lsh/lsh.html" />
+        <option value="$PROJECT_DIR$/lsh/polyline/polyline.html" />
       </list>
     </option>
   </component>
@@ -322,21 +279,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="l4u532.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="d3.v4" />
+              <option name="myItemId" value="d3.v3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,6 +331,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lsh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="polyline" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="l4u532.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="l4u532.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -425,18 +386,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lsh/polyline" />
       <recent name="$PROJECT_DIR$/heatmap" />
       <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$/heatmap/js" />
       <recent name="$PROJECT_DIR$/heatmap/css" />
-      <recent name="$PROJECT_DIR$/lsh/network/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lsh/polyline" />
       <recent name="$PROJECT_DIR$/media" />
       <recent name="$PROJECT_DIR$/heatmap/js" />
       <recent name="$PROJECT_DIR$/lsh/network" />
       <recent name="$PROJECT_DIR$/polyline" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -528,12 +489,20 @@
       <workItem from="1502782902712" duration="9293000" />
       <workItem from="1502966920799" duration="6351000" />
       <workItem from="1503654863094" duration="872000" />
-      <workItem from="1503655766961" duration="5361000" />
+      <workItem from="1503655766961" duration="6501000" />
     </task>
+    <task id="LOCAL-00001" summary="split up in managable parts, re-layout indexhtml">
+      <created>1503664891621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1503664891622</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33893000" />
+    <option name="totallyTimeSpent" value="35033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +515,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3404864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -556,7 +525,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JSON Viewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -586,19 +555,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="split up in managable parts, re-layout indexhtml" />
+    <option name="LAST_COMMIT_MESSAGE" value="split up in managable parts, re-layout indexhtml" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/furtive.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6724" selection-start-line="0" selection-start-column="6724" selection-end-line="0" selection-end-column="6724" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -627,6 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -665,6 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,6 +782,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -847,14 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="699">
           <caret line="292" column="27" selection-start-line="292" selection-start-column="27" selection-end-line="292" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lsh/polyline/polyline.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="12" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1026,6 +986,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lsh/polyline/d3.v3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lsh/polyline/polyline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
